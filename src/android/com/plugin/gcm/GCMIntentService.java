@@ -100,19 +100,19 @@ public class GCMIntentService extends GCMBaseIntentService {
 		
 		String message = extras.getString("message");
 		JSONObject body = null;
-		String title = "";
+		String title = "InTouch";
 		String alert = "";
 		try	{
 			body = new JSONObject(message);
-		} catch(JSONException e) {}
+		} catch(JSONException e) {} catch(NullPointerException e) {} catch(Exception e) {}
 
 		try {
 			title = body.getString("title");
-		} catch(JSONException e) {}
+		} catch(JSONException e) {} catch(NullPointerException e) {} catch(Exception e) {}
 
 		try {
 			alert = body.getString("alert");
-		} catch (JSONException e) {}
+		} catch (JSONException e) {} catch(NullPointerException e) {} catch(Exception e) {}
 
 
 		NotificationCompat.Builder mBuilder =
